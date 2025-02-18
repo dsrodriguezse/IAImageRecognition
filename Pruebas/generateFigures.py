@@ -39,12 +39,21 @@ def generate_random_figure(fig_id):
     
     return figure
 
+def generate_relations(num_figures):
+    relations = []
+    if num_figures > 1:
+        ids = list(range(1, num_figures + 1))
+        random.shuffle(ids)
+        for i in range(num_figures - 1):
+            relations.append({"obj1": ids[i], "obj2": ids[i + 1]})
+    return relations
+
 def generate_scene(num_figures):
     scene = {
         "size": generate_random_size(),
         "background": generate_random_color(),
         "objects": [generate_random_figure(i) for i in range(1, num_figures + 1)],
-        "relations": []  # Puedes agregar lógica para relaciones si lo deseas
+        "relations": [generate_relations(num_figures)]  # Puedes agregar lógica para relaciones si lo deseas
     }
     return scene
 

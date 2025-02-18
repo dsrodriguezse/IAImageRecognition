@@ -26,6 +26,16 @@ for y in range(0, imagen.height, 10):  # Escaneo cada 10 píxeles para simplific
             })
 
 # Crear el JSON
+'''
+def relations(num_figures):
+    relations = []
+    if num_figures > 1:
+        ids = list(range(1, num_figures + 1))
+        random.shuffle(ids)
+        for i in range(num_figures - 1):
+            relations.append({"obj1": ids[i], "obj2": ids[i + 1]})
+    return relations
+'''
 scene = {
     'size': {'width': imagen.width, 'height': imagen.height},
     'background': {'red': 255, 'green': 255, 'blue': 255},
