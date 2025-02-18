@@ -3,7 +3,7 @@ import json
 import os
 
 
-from utils import get_color_dict,generar_nombre_archivo
+from utils import get_color_dict,generar_nombre_archivo, get_carpeta
 
 # Cargar la imagen
 imagen = Image.open('output_scene.png')
@@ -33,12 +33,11 @@ scene = {
     'relations': []  # Aquí podrías detectar relaciones entre objetos
 }
 
-# Nombre archivo
+# Nombre archivo en carpetea JSON
 nombre_archivo = generar_nombre_archivo("figuras", "json")
-# ruta carpeta JSON
-ruta_completa = os.path.join('..', 'JSON', nombre_archivo)
+ruta = get_carpeta('JSON',nombre_archivo)
 
 # Guardar el JSON
-with open(ruta_completa, 'w') as f:
+with open(ruta, 'w') as f:
     json.dump(scene, f, indent=4)
 print(f"Guardado en la carpeta JSON como: {nombre_archivo}")

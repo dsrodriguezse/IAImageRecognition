@@ -1,7 +1,9 @@
 from PIL import Image, ImageDraw
 import json
+import os
 
-from utils import get_color,generar_nombre_archivo
+
+from utils import get_color,generar_nombre_archivo, get_carpeta
 
 # Cargar el archivo JSON
 with open('scene.json', 'r') as f:
@@ -54,11 +56,10 @@ for obj in scene['objects']:
         vertices = [(p['x'], p['y']) for p in points]
         dibujo.polygon(vertices, fill=color)
 
-# Generar el nombre del archivo con fecha y hora
-nombre_archivo = generar_nombre_archivo("imagen", "png")
-# ruta carpeta imagenes
-ruta_completa = os.path.join('..', 'imagenes', nombre_archivo)
+# Nombre archivo en carpeta imagenes
+nombre_archivo=generar_nombre_archivo("imagen", "png")
+ruta = get_carpeta('imagenes',nombre_archivo)
 
 # Guardar la imagen generada
-imagen.save(ruta_completa)
+imagen.save(ruta)
 print(f"Guardado en la carpeta imagenes como: {nombre_archivo}")

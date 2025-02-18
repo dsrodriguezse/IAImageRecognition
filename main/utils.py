@@ -1,10 +1,16 @@
 from datetime import datetime
+import os
+
 
 # Función para generar el nombre del archivo con fecha y hora
 def generar_nombre_archivo(base_name, extension):
     now = datetime.now()
     timestamp = now.strftime("%Y%m%d_%H%M%S")  # Formato: AñoMesDía_HoraMinutoSegundo
     return f"{base_name}_{timestamp}.{extension}"
+
+# ruta carpetas JSON/imagenes
+def get_carpeta(tipo,nombre_archivo):
+    return os.path.join('..', tipo, nombre_archivo)
 
 # Función para convertir el color del JSON a una tupla RGB
 def get_color(color_dict):
