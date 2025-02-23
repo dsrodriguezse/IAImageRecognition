@@ -10,13 +10,17 @@ def generate_random_color():
         "blue": random.randint(0, 255)
     }
 
-def generate_random_point():
-    return {"x": random.randint(0, 500), "y": random.randint(0, 500)}
+def generate_random_point(scene_size):
+    # Genera un punto aleatorio dentro del tamaño de la escena
+    x = random.randint(0, scene_size["width"] - 1)  # El punto no puede exceder el ancho
+    y = random.randint(0, scene_size["height"] - 1)  # El punto no puede exceder la altura
+    return {"x": x, "y": y}
 
 def generate_random_size():
-    return {"width": random.randint(10, 200), "height": random.randint(10, 200)}
+    return {"width": random.randint(50, 500), "height": random.randint(50, 500)}
 
-def generate_random_figure(fig_id):
+
+def generate_random_figure(fig_id, scene_size):
     figure_types = ["ellipse", "circle", "triangle", "rectangle", "square", "polygon"]
     fig_type = random.choice(figure_types)
     
@@ -27,35 +31,59 @@ def generate_random_figure(fig_id):
     }
     
     if fig_type in ["polygon", "triangle"]:
-        figure["points"] = [generate_random_point() for _ in range(random.randint(3, 6))]
+        # Para polígonos y triángulos, generamos varios puntos
+        figure["points"] = [generate_random_point(scene_size) for _ in range(random.randint(3, 6))]
     elif fig_type == "circle":
-        figure["points"] = {"center": generate_random_point(), "radius": random.randint(10, 100)}
+        # Para círculos, generamos un centro y un radio
+        figure["points"] = {
+            "center": generate_random_point(scene_size),
+            "radius": random.randint(10, 100)
+        }
     elif fig_type == "ellipse":
-        figure["points"] = {"center": generate_random_point(), "radii": generate_random_size()}
+        # Para elipses, generamos un centro y dos radios
+        figure["points"] = {
+            "center": generate_random_point(scene_size),
+            "radii": generate_random_size()
+        }
     elif fig_type == "square":
-        figure["points"] = {"topleft": generate_random_point(), "side": random.randint(10, 200)}
+        # Para cuadrados, generamos el punto superior izquierdo y el lado
+        figure["points"] = {
+            "topleft": generate_random_point(scene_size),
+            "side": random.randint(10, 200)
+        }
     elif fig_type == "rectangle":
-        figure["points"] = {"topleft": generate_random_point(), "sides": generate_random_size()}
+        # Para rectángulos, generamos el punto superior izquierdo y las dimensiones del lado
+        figure["points"] = {
+            "topleft": generate_random_point(scene_size),
+            "sides": generate_random_size()
+        }
     
     return figure
+
 
 def generate_relations(num_figures):
     relations = []
     if num_figures > 1:
-        ids = list(range(1, num_figures + 1))
-        random.shuffle(ids)
+        ids = list(range(1, num_figures + 1))  #IDs consecutivos
+        random.shuffle(ids)  # aleatorio entre las figuras
         for i in range(num_figures - 1):
-            relations.append({"obj1": ids[i], "obj2": ids[i + 1]})
+            relations.append({"obj1": ids[i], "obj2": ids[i + 1]})  # Relación entre figuras consecutivas
     return relations
 
+
 def generate_scene(num_figures):
+    scene_size = generate_random_size()
+    
+    # Generamos los objetos (figuras) pasándoles el tamaño de la escena
     scene = {
-        "size": generate_random_size(),
+        "size": scene_size,
         "background": generate_random_color(),
-        "objects": [generate_random_figure(i) for i in range(1, num_figures + 1)],
-        "relations": [generate_relations(num_figures)]  # Puedes agregar lógica para relaciones si lo deseas
+        "objects": [generate_random_figure(i, scene_size) for i in range(1, num_figures + 1)],
+        "relations": generate_relations(num_figures)
     }
-    return scene
+
+    return {"scene": scene}
+
 
 def main():
     num_files = int(input("Ingrese la cantidad de archivos a generar: "))
