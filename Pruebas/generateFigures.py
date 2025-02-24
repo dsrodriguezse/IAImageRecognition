@@ -19,6 +19,13 @@ def generate_random_point(scene_size):
 def generate_random_size():
     return {"width": random.randint(50, 500), "height": random.randint(50, 500)}
 
+def generate_random_figure_size(scene_size, origin):
+    max_width = scene_size["width"] - origin["x"]
+    max_height = scene_size["height"] - origin["y"]
+    return {
+        "width": random.randint(10, max_width),
+        "height": random.randint(10, max_height)
+    }
 
 def generate_random_figure(fig_id, scene_size):
     figure_types = ["ellipse", "circle", "triangle", "rectangle", "square", "polygon"]
@@ -30,32 +37,34 @@ def generate_random_figure(fig_id, scene_size):
         "color": generate_random_color()
     }
     
-    if fig_type in ["polygon", "triangle"]:
-        # Para polígonos y triángulos, generamos varios puntos
-        figure["points"] = [generate_random_point(scene_size) for _ in range(random.randint(3, 6))]
+    if fig_type == "polygon":
+        figure["points"] = [generate_random_point(scene_size) for _ in range(random.randint(4, 6))]
+        
+    elif fig_type == "triangle":
+        figure["points"] = [generate_random_point(scene_size) for _ in range(3)]
     elif fig_type == "circle":
-        # Para círculos, generamos un centro y un radio
         figure["points"] = {
             "center": generate_random_point(scene_size),
-            "radius": random.randint(10, 100)
+            "radius": random.randint(10, min(scene_size["width"], scene_size["height"]) // 2)
         }
     elif fig_type == "ellipse":
-        # Para elipses, generamos un centro y dos radios
+        center = generate_random_point(scene_size)
         figure["points"] = {
-            "center": generate_random_point(scene_size),
-            "radii": generate_random_size()
+            "center": center,
+            "radii": generate_random_figure_size(scene_size, center)
         }
     elif fig_type == "square":
-        # Para cuadrados, generamos el punto superior izquierdo y el lado
+        topleft = generate_random_point(scene_size)
+        side = random.randint(10, min(scene_size["width"] - topleft["x"], scene_size["height"] - topleft["y"]))
         figure["points"] = {
-            "topleft": generate_random_point(scene_size),
-            "side": random.randint(10, 200)
+            "topleft": topleft,
+            "side": side
         }
     elif fig_type == "rectangle":
-        # Para rectángulos, generamos el punto superior izquierdo y las dimensiones del lado
+        topleft = generate_random_point(scene_size)
         figure["points"] = {
-            "topleft": generate_random_point(scene_size),
-            "sides": generate_random_size()
+            "topleft": topleft,
+            "sides": generate_random_figure_size(scene_size, topleft)
         }
     
     return figure
@@ -84,12 +93,7 @@ def generate_scene(num_figures):
 
     return {"scene": scene}
 
-
-def main():
-    num_files = int(input("Ingrese la cantidad de archivos a generar: "))
-    num_figures = int(input("Ingrese la cantidad de figuras por archivo (máx 7): "))
-    num_figures = min(num_figures, 7)
-    
+def save_scene(num_files,num_figures):
     folder_name = f"{num_figures}Figuras"
     os.makedirs(folder_name, exist_ok=True)
     
@@ -101,6 +105,14 @@ def main():
         with open(filename, "w") as f:
             json.dump(scene, f, indent=4)
         print(f"Archivo generado: {filename}")
+
+
+def main():
+    num_files = int(input("Ingrese la cantidad de archivos a generar: "))
+    num_figures = int(input("Ingrese la cantidad de figuras por archivo (máx 7): "))
+    num_figures = min(num_figures, 7)
+    
+    save_scene(num_files,num_figures)
 
 if __name__ == "__main__":
     main()
