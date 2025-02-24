@@ -101,7 +101,7 @@ def save_scene(num_files,num_figures):
     
     for i in range(num_files):
         scene = generate_scene(num_figures)
-        filename = os.path.join(folder_name, f"figures{timestamp}_{i+1}.json")
+        filename = os.path.join(folder_name, f"{num_figures}figures{timestamp}_{i+1}.json")
         with open(filename, "w") as f:
             json.dump(scene, f, indent=4)
         print(f"Archivo generado: {filename}")
