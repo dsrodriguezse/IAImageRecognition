@@ -1,0 +1,110 @@
+{
+    "scene": {
+        "size": {
+            "width": 89,
+            "height": 118
+        },
+        "background": {
+            "red": 160,
+            "green": 103,
+            "blue": 47
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "triangle",
+                "color": {
+                    "red": 76,
+                    "green": 228,
+                    "blue": 201
+                },
+                "points": [
+                    {
+                        "x": 16,
+                        "y": 30
+                    },
+                    {
+                        "x": 18,
+                        "y": 27
+                    },
+                    {
+                        "x": 17,
+                        "y": 59
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "type": "rectangle",
+                "color": {
+                    "red": 72,
+                    "green": 128,
+                    "blue": 212
+                },
+                "points": {
+                    "topleft": {
+                        "x": 75,
+                        "y": 35
+                    },
+                    "sides": {
+                        "width": 10,
+                        "height": 69
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "square",
+                "color": {
+                    "red": 253,
+                    "green": 188,
+                    "blue": 107
+                },
+                "points": {
+                    "topleft": {
+                        "x": 71,
+                        "y": 6
+                    },
+                    "side": 18
+                }
+            },
+            {
+                "id": 4,
+                "type": "triangle",
+                "color": {
+                    "red": 170,
+                    "green": 130,
+                    "blue": 249
+                },
+                "points": [
+                    {
+                        "x": 29,
+                        "y": 50
+                    },
+                    {
+                        "x": 13,
+                        "y": 63
+                    },
+                    {
+                        "x": 63,
+                        "y": 92
+                    }
+                ]
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 1,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 4
+            }
+        ]
+    }
+}
