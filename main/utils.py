@@ -8,6 +8,11 @@ def generar_nombre_archivo(base_name, extension):
     timestamp = now.strftime("%Y%m%d_%H%M%S")  # Formato: AñoMesDía_HoraMinutoSegundo
     return f"{base_name}_{timestamp}.{extension}"
 
+def generar_nombre_archivo(base_name, suffix, extension):
+    now = datetime.now()
+    timestamp = now.strftime("%Y%m%d_%H%M%S")  # Formato: AñoMesDía_HoraMinutoSegundo
+    return f"{base_name}_{suffix}_{timestamp}.{extension}"
+
 # ruta carpetas JSON/imagenes
 def get_carpeta(tipo,nombre_archivo):
     return os.path.join('..', tipo, nombre_archivo)

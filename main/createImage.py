@@ -2,22 +2,46 @@ from PIL import Image, ImageDraw
 import json
 import os
 
+from utils import get_color, generar_nombre_archivo, get_carpeta
 
-from utils import get_color,generar_nombre_archivo, get_carpeta
+# Listar archivos en la carpeta "assets"
+assets_folder = 'assets'
+files = [f for f in os.listdir(assets_folder) if f.endswith('.json')]
 
-# Cargar el archivo JSON
-with open('scene.json', 'r') as f:
+if not files:
+    print("No se encontraron archivos JSON en la carpeta 'assets'.")
+    exit()
+
+# Mostrar archivos y pedir al usuario que seleccione uno
+print("Seleccione un archivo JSON para cargar:")
+for i, file in enumerate(files):
+    print(f"{i + 1}. {file}")
+
+file_index = int(input("Ingrese el número del archivo: ")) - 1
+
+if file_index < 0 or file_index >= len(files):
+    print("Selección inválida.")
+    exit()
+
+selected_file = files[file_index]
+file_path = os.path.join(assets_folder, selected_file)
+
+# Cargar el archivo JSON seleccionado
+with open(file_path, 'r') as f:
     scene = json.load(f)
 
+# Acceder a la clave 'scene' dentro del archivo JSON
+scene_data = scene['scene']
+
 # Crear una imagen con el tamaño y color de fondo especificados
-width = scene['size']['width']
-height = scene['size']['height']
-background_color = get_color(scene['background'])
+width = scene_data['size']['width']
+height = scene_data['size']['height']
+background_color = get_color(scene_data['background'])
 imagen = Image.new('RGB', (width, height), background_color)
 dibujo = ImageDraw.Draw(imagen)
 
 # Dibujar cada objeto en la escena
-for obj in scene['objects']:
+for obj in scene_data['objects']:
     color = get_color(obj['color'])
     points = obj['points']
     
@@ -57,8 +81,10 @@ for obj in scene['objects']:
         dibujo.polygon(vertices, fill=color)
 
 # Nombre archivo en carpeta imagenes
-nombre_archivo=generar_nombre_archivo("imagen", "png")
-ruta = get_carpeta('imagenes',nombre_archivo)
+json_filename = os.path.splitext(selected_file)[0]
+suffix = json_filename[-5:]
+nombre_archivo = generar_nombre_archivo("imagen",suffix, "png")
+ruta = get_carpeta('imagenes', nombre_archivo)
 
 # Guardar la imagen generada
 imagen.save(ruta)
