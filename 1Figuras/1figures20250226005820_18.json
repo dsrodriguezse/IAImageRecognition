@@ -1,0 +1,39 @@
+{
+    "scene": {
+        "size": {
+            "width": 333,
+            "height": 113
+        },
+        "background": {
+            "red": 177,
+            "green": 27,
+            "blue": 26
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "triangle",
+                "color": {
+                    "red": 93,
+                    "green": 202,
+                    "blue": 206
+                },
+                "points": [
+                    {
+                        "x": 311,
+                        "y": 27
+                    },
+                    {
+                        "x": 80,
+                        "y": 49
+                    },
+                    {
+                        "x": 290,
+                        "y": 13
+                    }
+                ]
+            }
+        ],
+        "relations": []
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "scene": {
+        "size": {
+            "width": 499,
+            "height": 300
+        },
+        "background": {
+            "red": 252,
+            "green": 0,
+            "blue": 47
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "square",
+                "color": {
+                    "red": 181,
+                    "green": 149,
+                    "blue": 25
+                },
+                "points": {
+                    "topleft": {
+                        "x": 168,
+                        "y": 120
+                    },
+                    "side": 33
+                }
+            }
+        ],
+        "relations": []
+    }
+}
