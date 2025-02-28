@@ -1,0 +1,35 @@
+{
+    "scene": {
+        "size": {
+            "width": 468,
+            "height": 416
+        },
+        "background": {
+            "red": 30,
+            "green": 250,
+            "blue": 249
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "ellipse",
+                "color": {
+                    "red": 219,
+                    "green": 224,
+                    "blue": 115
+                },
+                "points": {
+                    "center": {
+                        "x": 215,
+                        "y": 335
+                    },
+                    "radii": {
+                        "width": 71,
+                        "height": 77
+                    }
+                }
+            }
+        ],
+        "relations": []
+    }
+}

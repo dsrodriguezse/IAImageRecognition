@@ -19,9 +19,16 @@ def generate_random_point(scene_size):
 def generate_random_size():
     return {"width": random.randint(50, 500), "height": random.randint(50, 500)}
 
-def generate_random_figure_size(scene_size, origin):
-    max_width = scene_size["width"] - origin["x"]
-    max_height = scene_size["height"] - origin["y"]
+def generate_random_figure_size(scene_size, center):
+    max_width = min(center['x'], scene_size['width'] - center['x'])
+    max_height = min(center['y'], scene_size['height'] - center['y'])
+
+    # Ensure the range is valid
+    if max_width < 10:
+        max_width = 10
+    if max_height < 10:
+        max_height = 10
+
     return {
         "width": random.randint(10, max_width),
         "height": random.randint(10, max_height)
