@@ -93,7 +93,11 @@ def generate_scene(num_figures):
     # Generamos los objetos (figuras) pasándoles el tamaño de la escena
     scene = {
         "size": scene_size,
-        "background": generate_random_color(),
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+    },
         "objects": [generate_random_figure(i, scene_size) for i in range(1, num_figures + 1)],
         "relations": generate_relations(num_figures)
     }
