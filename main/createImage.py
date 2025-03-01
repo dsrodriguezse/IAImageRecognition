@@ -105,7 +105,7 @@ def procesar_archivo(ruta_archivo):
 
         # Guardar la imagen
         nombre_base = "imagen"
-        sufijo = os.path.splitext(os.path.basename(ruta_archivo))[0][-5:]
+        sufijo = os.path.splitext(os.path.basename(ruta_archivo))[0][0] + os.path.splitext(os.path.basename(ruta_archivo))[0][-5:]
         guardar_imagen(imagen, nombre_base, sufijo)
     except Exception as e:
         print(f"Error al procesar el archivo {ruta_archivo}: {e}")
