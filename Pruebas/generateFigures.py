@@ -2,13 +2,10 @@ import json
 import random
 import os
 from datetime import datetime
+from utils import COLORES_PERMITIDOS
 
 def generate_random_color():
-    return {
-        "red": random.randint(0, 255),
-        "green": random.randint(0, 255),
-        "blue": random.randint(0, 255)
-    }
+    return random.choice(list(COLORES_PERMITIDOS.values()))
 
 def generate_random_point(scene_size):
     # Genera un punto aleatorio dentro del tamaño de la escena
@@ -93,11 +90,7 @@ def generate_scene(num_figures):
     # Generamos los objetos (figuras) pasándoles el tamaño de la escena
     scene = {
         "size": scene_size,
-        "background": {
-            "red": 255,
-            "green": 255,
-            "blue": 255
-    },
+        "background": COLORES_PERMITIDOS["blanco"],  # Fondo siempre blanco
         "objects": [generate_random_figure(i, scene_size) for i in range(1, num_figures + 1)],
         "relations": generate_relations(num_figures)
     }

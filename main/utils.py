@@ -21,6 +21,16 @@ def get_carpeta(tipo,nombre_archivo):
 def get_color(color_dict):
     return (color_dict['red'], color_dict['green'], color_dict['blue'])
 
+# Colores permitidos y sus valores RGB
+COLORES_PERMITIDOS = {
+    "amarillo": {"red": 255, "green": 255, "blue": 0},
+    "rojo": {"red": 255, "green": 0, "blue": 0},
+    "azul": {"red": 0, "green": 0, "blue": 255},
+    "negro": {"red": 0, "green": 0, "blue": 0},
+    "verde": {"red": 0, "green": 255, "blue": 0},
+    "blanco": {"red": 255, "green": 255, "blue": 255}
+}
+
 # Función para convertir un color RGB a un diccionario
 def get_color_dict(rgb):
     return {'red': rgb[0], 'green': rgb[1], 'blue': rgb[2]}
