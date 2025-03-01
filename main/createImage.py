@@ -1,46 +1,20 @@
 from PIL import Image, ImageDraw
 import json
 import os
-
 from utils import get_color, generar_nombre_archivo, get_carpeta
 
-# Listar archivos en la carpeta "assets"
-assets_folder = '1Figuras'
-files = [f for f in os.listdir(assets_folder) if f.endswith('.json')]
-
-if not files:
-    print("No se encontraron archivos JSON en la carpeta 'assets'.")
-    exit()
-
-# Mostrar archivos y pedir al usuario que seleccione uno o más
-print("Seleccione uno o más archivos JSON para cargar (separados por comas):")
-for i, file in enumerate(files):
-    print(f"{i + 1}. {file}")
-
-file_indices = input("Ingrese los números de los archivos: ").split(',')
-
-# Validar y convertir los índices ingresados
-try:
-    file_indices = [int(index.strip()) - 1 for index in file_indices]
-except ValueError:
-    print("Entrada inválida.")
-    exit()
-
-for file_index in file_indices:
-    if file_index < 0 or file_index >= len(files):
-        print(f"Selección inválida: {file_index + 1}")
-        continue
-
-    selected_file = files[file_index]
-    file_path = os.path.join(assets_folder, selected_file)
-
-    # Cargar el archivo JSON seleccionado
-    with open(file_path, 'r') as f:
+def cargar_escena(ruta_archivo):
+    """
+    Carga un archivo JSON y devuelve los datos de la escena.
+    """
+    with open(ruta_archivo, 'r') as f:
         scene = json.load(f)
+    return scene['scene']
 
-    # Acceder a la clave 'scene' dentro del archivo JSON
-    scene_data = scene['scene']
-
+def dibujar_escena(scene_data):
+    """
+    Dibuja una escena a partir de los datos del JSON.
+    """
     # Crear una imagen con el tamaño y color de fondo especificados
     width = scene_data['size']['width']
     height = scene_data['size']['height']
@@ -88,10 +62,13 @@ for file_index in file_indices:
             vertices = [(p['x'], p['y']) for p in points]
             dibujo.polygon(vertices, fill=color)
 
-    # Nombre archivo en carpeta imagenes
-    json_filename = os.path.splitext(selected_file)[0]
-    suffix = json_filename[-5:]
-    nombre_archivo = generar_nombre_archivo("imagen", suffix, "png")
+    return imagen
+
+def guardar_imagen(imagen, nombre_base, sufijo):
+    """
+    Guarda la imagen generada en la carpeta 'imagenes'.
+    """
+    nombre_archivo = generar_nombre_archivo(nombre_base, sufijo, "png")
     ruta = get_carpeta('imagenes', nombre_archivo)
 
     # Crear la carpeta si no existe
@@ -100,3 +77,73 @@ for file_index in file_indices:
     # Guardar la imagen generada
     imagen.save(ruta)
     print(f"Guardado en la carpeta imagenes como: {nombre_archivo}")
+
+def procesar_archivo(ruta_archivo):
+    """
+    Procesa un archivo JSON: carga la escena, la dibuja y guarda la imagen.
+    """
+    try:
+        # Cargar la escena desde el archivo JSON
+        scene_data = cargar_escena(ruta_archivo)
+
+        # Dibujar la escena
+        imagen = dibujar_escena(scene_data)
+
+        # Guardar la imagen
+        nombre_base = "imagen"
+        sufijo = os.path.splitext(os.path.basename(ruta_archivo))[0][-5:]
+        guardar_imagen(imagen, nombre_base, sufijo)
+    except Exception as e:
+        print(f"Error al procesar el archivo {ruta_archivo}: {e}")
+
+def main():
+    # Listar archivos en la carpeta "assets"
+    assets_folder = 'assets'
+    files = [f for f in os.listdir(assets_folder) if f.endswith('.json')]
+
+    if not files:
+        print("No se encontraron archivos JSON en la carpeta 'assets'.")
+        return
+
+    # Mostrar archivos y pedir al usuario que seleccione una opción
+    print("Seleccione una opción:")
+    print("1. Dibujar una imagen específica")
+    print("2. Dibujar todas las imágenes")
+    opcion = input("Ingrese el número de la opción: ")
+
+    if opcion == "1":
+        # Opción 1: Dibujar una imagen específica
+        print("Seleccione uno o más archivos JSON para cargar (separados por comas):")
+        for i, file in enumerate(files):
+            print(f"{i + 1}. {file}")
+
+        file_indices = input("Ingrese los números de los archivos: ").split(',')
+
+        # Validar y convertir los índices ingresados
+        try:
+            file_indices = [int(index.strip()) - 1 for index in file_indices]
+        except ValueError:
+            print("Entrada inválida.")
+            return
+
+        # Procesar los archivos seleccionados
+        for file_index in file_indices:
+            if file_index < 0 or file_index >= len(files):
+                print(f"Selección inválida: {file_index + 1}")
+                continue
+
+            selected_file = files[file_index]
+            file_path = os.path.join(assets_folder, selected_file)
+            procesar_archivo(file_path)
+
+    elif opcion == "2":
+        # Opción 2: Dibujar todas las imágenes
+        for selected_file in files:
+            file_path = os.path.join(assets_folder, selected_file)
+            procesar_archivo(file_path)
+
+    else:
+        print("Opción no válida.")
+
+if __name__ == "__main__":
+    main()
