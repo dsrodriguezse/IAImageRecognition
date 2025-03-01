@@ -1,6 +1,8 @@
 from PIL import Image, ImageDraw
 import json
 import os
+import math
+
 from utils import get_color, generar_nombre_archivo, get_carpeta
 
 def cargar_escena(ruta_archivo):
@@ -10,6 +12,16 @@ def cargar_escena(ruta_archivo):
     with open(ruta_archivo, 'r') as f:
         scene = json.load(f)
     return scene['scene']
+
+def ordenar_puntos_por_angulo(puntos):
+    #Calcular el centroide (punto medio de todos los puntos)
+    cx = sum(p[0] for p in puntos) / len(puntos)
+    cy = sum(p[1] for p in puntos) / len(puntos)
+    
+    #Ordenar los puntos en sentido antihorario usando el ángulo polar
+    puntos_ordenados = sorted(puntos, key=lambda p: math.atan2(p[1] - cy, p[0] - cx))
+    
+    return puntos_ordenados
 
 def dibujar_escena(scene_data):
     """
@@ -60,7 +72,9 @@ def dibujar_escena(scene_data):
             )
         elif obj['type'] == 'polygon':
             vertices = [(p['x'], p['y']) for p in points]
-            dibujo.polygon(vertices, fill=color)
+            vertices_ordenados = ordenar_puntos_por_angulo(vertices)
+            vertices_ordenados.append(vertices_ordenados[0])  # Cierra el polígono
+            dibujo.polygon(vertices_ordenados, fill=color)
 
     return imagen
 
