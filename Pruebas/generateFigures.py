@@ -1,8 +1,14 @@
 import json
 import random
+import sys
 import os
 from datetime import datetime
-from utils import COLORES_PERMITIDOS
+
+# Agregar la ruta de IAImageRecognition/ al sys.path
+ruta_proyecto = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(ruta_proyecto)
+
+from main.utils import COLORES_PERMITIDOS
 
 def generate_random_color():
     return random.choice(list(COLORES_PERMITIDOS.values()))
