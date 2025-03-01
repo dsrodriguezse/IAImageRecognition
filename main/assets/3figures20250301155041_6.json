@@ -1,0 +1,95 @@
+{
+    "scene": {
+        "size": {
+            "width": 476,
+            "height": 498
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "circle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 468,
+                        "y": 0
+                    },
+                    "radius": 77
+                }
+            },
+            {
+                "id": 2,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 20,
+                        "y": 346
+                    },
+                    {
+                        "x": 204,
+                        "y": 391
+                    },
+                    {
+                        "x": 127,
+                        "y": 334
+                    },
+                    {
+                        "x": 317,
+                        "y": 40
+                    },
+                    {
+                        "x": 194,
+                        "y": 319
+                    },
+                    {
+                        "x": 124,
+                        "y": 268
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "type": "ellipse",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 56,
+                        "y": 195
+                    },
+                    "radii": {
+                        "width": 26,
+                        "height": 48
+                    }
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 1,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 2
+            }
+        ]
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "scene": {
+        "size": {
+            "width": 270,
+            "height": 363
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "triangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 82,
+                        "y": 361
+                    },
+                    {
+                        "x": 14,
+                        "y": 177
+                    },
+                    {
+                        "x": 230,
+                        "y": 91
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "type": "rectangle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 188,
+                        "y": 179
+                    },
+                    "sides": {
+                        "width": 27,
+                        "height": 39
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 224,
+                        "y": 26
+                    },
+                    "sides": {
+                        "width": 40,
+                        "height": 15
+                    }
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 3,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 1
+            }
+        ]
+    }
+}

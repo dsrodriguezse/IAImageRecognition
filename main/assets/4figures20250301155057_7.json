@@ -1,0 +1,105 @@
+{
+    "scene": {
+        "size": {
+            "width": 298,
+            "height": 71
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "ellipse",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 121,
+                        "y": 17
+                    },
+                    "radii": {
+                        "width": 45,
+                        "height": 16
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "type": "ellipse",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 279,
+                        "y": 57
+                    },
+                    "radii": {
+                        "width": 14,
+                        "height": 14
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "ellipse",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 44,
+                        "y": 52
+                    },
+                    "radii": {
+                        "width": 37,
+                        "height": 18
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 189,
+                        "y": 34
+                    },
+                    "sides": {
+                        "width": 107,
+                        "height": 34
+                    }
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 3,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 4
+            },
+            {
+                "obj1": 4,
+                "obj2": 1
+            }
+        ]
+    }
+}

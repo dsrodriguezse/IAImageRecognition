@@ -1,0 +1,107 @@
+{
+    "scene": {
+        "size": {
+            "width": 459,
+            "height": 323
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 249,
+                        "y": 155
+                    },
+                    "radius": 110
+                }
+            },
+            {
+                "id": 2,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 237,
+                        "y": 99
+                    },
+                    {
+                        "x": 92,
+                        "y": 189
+                    },
+                    {
+                        "x": 296,
+                        "y": 100
+                    },
+                    {
+                        "x": 8,
+                        "y": 186
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "type": "rectangle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 86,
+                        "y": 123
+                    },
+                    "sides": {
+                        "width": 33,
+                        "height": 91
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 172,
+                        "y": 224
+                    },
+                    "side": 37
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 3,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 4
+            }
+        ]
+    }
+}

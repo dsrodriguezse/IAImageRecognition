@@ -1,0 +1,92 @@
+{
+    "scene": {
+        "size": {
+            "width": 403,
+            "height": 180
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "square",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 27,
+                        "y": 63
+                    },
+                    "side": 14
+                }
+            },
+            {
+                "id": 2,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 228,
+                        "y": 139
+                    },
+                    "radius": 87
+                }
+            },
+            {
+                "id": 3,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 137,
+                        "y": 135
+                    },
+                    {
+                        "x": 383,
+                        "y": 132
+                    },
+                    {
+                        "x": 362,
+                        "y": 32
+                    },
+                    {
+                        "x": 243,
+                        "y": 11
+                    },
+                    {
+                        "x": 28,
+                        "y": 174
+                    },
+                    {
+                        "x": 140,
+                        "y": 54
+                    }
+                ]
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 2,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 1
+            }
+        ]
+    }
+}

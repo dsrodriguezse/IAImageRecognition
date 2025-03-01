@@ -1,0 +1,80 @@
+{
+    "scene": {
+        "size": {
+            "width": 461,
+            "height": 307
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "circle",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 57,
+                        "y": 145
+                    },
+                    "radius": 132
+                }
+            },
+            {
+                "id": 2,
+                "type": "triangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": [
+                    {
+                        "x": 230,
+                        "y": 81
+                    },
+                    {
+                        "x": 330,
+                        "y": 27
+                    },
+                    {
+                        "x": 243,
+                        "y": 25
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 263,
+                        "y": 259
+                    },
+                    "side": 19
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 3,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 2
+            }
+        ]
+    }
+}

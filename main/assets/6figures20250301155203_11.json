@@ -1,0 +1,165 @@
+{
+    "scene": {
+        "size": {
+            "width": 150,
+            "height": 389
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "polygon",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": [
+                    {
+                        "x": 149,
+                        "y": 61
+                    },
+                    {
+                        "x": 100,
+                        "y": 369
+                    },
+                    {
+                        "x": 107,
+                        "y": 262
+                    },
+                    {
+                        "x": 95,
+                        "y": 282
+                    },
+                    {
+                        "x": 68,
+                        "y": 369
+                    },
+                    {
+                        "x": 17,
+                        "y": 344
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 90,
+                        "y": 344
+                    },
+                    "side": 29
+                }
+            },
+            {
+                "id": 3,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 20,
+                        "y": 315
+                    },
+                    "radius": 71
+                }
+            },
+            {
+                "id": 4,
+                "type": "triangle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 92,
+                        "y": 151
+                    },
+                    {
+                        "x": 75,
+                        "y": 253
+                    },
+                    {
+                        "x": 30,
+                        "y": 380
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 6,
+                        "y": 135
+                    },
+                    "sides": {
+                        "width": 10,
+                        "height": 81
+                    }
+                }
+            },
+            {
+                "id": 6,
+                "type": "ellipse",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 117,
+                        "y": 138
+                    },
+                    "radii": {
+                        "width": 29,
+                        "height": 135
+                    }
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 4,
+                "obj2": 6
+            },
+            {
+                "obj1": 6,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 5
+            },
+            {
+                "obj1": 5,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 2
+            }
+        ]
+    }
+}

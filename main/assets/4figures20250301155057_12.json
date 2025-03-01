@@ -1,0 +1,99 @@
+{
+    "scene": {
+        "size": {
+            "width": 177,
+            "height": 381
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 32,
+                        "y": 221
+                    },
+                    "radius": 19
+                }
+            },
+            {
+                "id": 2,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 102,
+                        "y": 359
+                    },
+                    "sides": {
+                        "width": 74,
+                        "height": 12
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "rectangle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 1,
+                        "y": 204
+                    },
+                    "sides": {
+                        "width": 10,
+                        "height": 170
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 108,
+                        "y": 0
+                    },
+                    "side": 24
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 4,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 2
+            }
+        ]
+    }
+}

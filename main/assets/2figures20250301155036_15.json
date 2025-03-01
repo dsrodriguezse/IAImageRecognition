@@ -1,0 +1,56 @@
+{
+    "scene": {
+        "size": {
+            "width": 199,
+            "height": 112
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "rectangle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 45,
+                        "y": 14
+                    },
+                    "sides": {
+                        "width": 42,
+                        "height": 10
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "type": "circle",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 123,
+                        "y": 110
+                    },
+                    "radius": 22
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 1,
+                "obj2": 2
+            }
+        ]
+    }
+}

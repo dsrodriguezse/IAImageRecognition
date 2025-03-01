@@ -1,0 +1,157 @@
+{
+    "scene": {
+        "size": {
+            "width": 462,
+            "height": 383
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "square",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 198,
+                        "y": 325
+                    },
+                    "side": 45
+                }
+            },
+            {
+                "id": 2,
+                "type": "ellipse",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 324,
+                        "y": 306
+                    },
+                    "radii": {
+                        "width": 67,
+                        "height": 36
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "square",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 362,
+                        "y": 75
+                    },
+                    "side": 25
+                }
+            },
+            {
+                "id": 4,
+                "type": "triangle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 435,
+                        "y": 272
+                    },
+                    {
+                        "x": 136,
+                        "y": 335
+                    },
+                    {
+                        "x": 308,
+                        "y": 268
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 140,
+                        "y": 194
+                    },
+                    {
+                        "x": 362,
+                        "y": 166
+                    },
+                    {
+                        "x": 169,
+                        "y": 24
+                    },
+                    {
+                        "x": 384,
+                        "y": 102
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "type": "ellipse",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 342,
+                        "y": 139
+                    },
+                    "radii": {
+                        "width": 15,
+                        "height": 136
+                    }
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 5,
+                "obj2": 6
+            },
+            {
+                "obj1": 6,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 4
+            }
+        ]
+    }
+}

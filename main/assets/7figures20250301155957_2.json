@@ -1,0 +1,166 @@
+{
+    "scene": {
+        "size": {
+            "width": 82,
+            "height": 240
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "triangle",
+                "color": {
+                    "red": 255,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 19,
+                        "y": 112
+                    },
+                    {
+                        "x": 68,
+                        "y": 145
+                    },
+                    {
+                        "x": 11,
+                        "y": 97
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "type": "square",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 50,
+                        "y": 167
+                    },
+                    "side": 23
+                }
+            },
+            {
+                "id": 3,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 255
+                },
+                "points": {
+                    "topleft": {
+                        "x": 2,
+                        "y": 34
+                    },
+                    "sides": {
+                        "width": 10,
+                        "height": 15
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 65,
+                        "y": 134
+                    },
+                    "radius": 14
+                }
+            },
+            {
+                "id": 5,
+                "type": "circle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 67,
+                        "y": 197
+                    },
+                    "radius": 32
+                }
+            },
+            {
+                "id": 6,
+                "type": "ellipse",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 1,
+                        "y": 120
+                    },
+                    "radii": {
+                        "width": 10,
+                        "height": 113
+                    }
+                }
+            },
+            {
+                "id": 7,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": {
+                    "center": {
+                        "x": 9,
+                        "y": 202
+                    },
+                    "radius": 21
+                }
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 7,
+                "obj2": 5
+            },
+            {
+                "obj1": 5,
+                "obj2": 3
+            },
+            {
+                "obj1": 3,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 4
+            },
+            {
+                "obj1": 4,
+                "obj2": 6
+            }
+        ]
+    }
+}

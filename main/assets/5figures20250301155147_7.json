@@ -1,0 +1,153 @@
+{
+    "scene": {
+        "size": {
+            "width": 442,
+            "height": 376
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "ellipse",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 346,
+                        "y": 247
+                    },
+                    "radii": {
+                        "width": 56,
+                        "height": 39
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 255
+                },
+                "points": [
+                    {
+                        "x": 283,
+                        "y": 225
+                    },
+                    {
+                        "x": 256,
+                        "y": 167
+                    },
+                    {
+                        "x": 412,
+                        "y": 16
+                    },
+                    {
+                        "x": 19,
+                        "y": 258
+                    },
+                    {
+                        "x": 145,
+                        "y": 84
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 241,
+                        "y": 51
+                    },
+                    "side": 98
+                }
+            },
+            {
+                "id": 4,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 385,
+                        "y": 126
+                    },
+                    {
+                        "x": 49,
+                        "y": 281
+                    },
+                    {
+                        "x": 167,
+                        "y": 189
+                    },
+                    {
+                        "x": 21,
+                        "y": 102
+                    },
+                    {
+                        "x": 290,
+                        "y": 58
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "type": "triangle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 41,
+                        "y": 239
+                    },
+                    {
+                        "x": 200,
+                        "y": 123
+                    },
+                    {
+                        "x": 275,
+                        "y": 365
+                    }
+                ]
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 5,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 4
+            },
+            {
+                "obj1": 4,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 3
+            }
+        ]
+    }
+}

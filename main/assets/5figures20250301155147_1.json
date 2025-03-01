@@ -1,0 +1,126 @@
+{
+    "scene": {
+        "size": {
+            "width": 445,
+            "height": 424
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "ellipse",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 195,
+                        "y": 3
+                    },
+                    "radii": {
+                        "width": 149,
+                        "height": 10
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "type": "rectangle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 444,
+                        "y": 36
+                    },
+                    "sides": {
+                        "width": 10,
+                        "height": 20
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "type": "circle",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 331,
+                        "y": 236
+                    },
+                    "radius": 103
+                }
+            },
+            {
+                "id": 4,
+                "type": "square",
+                "color": {
+                    "red": 255,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": {
+                    "topleft": {
+                        "x": 230,
+                        "y": 52
+                    },
+                    "side": 125
+                }
+            },
+            {
+                "id": 5,
+                "type": "triangle",
+                "color": {
+                    "red": 0,
+                    "green": 255,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 230,
+                        "y": 360
+                    },
+                    {
+                        "x": 199,
+                        "y": 93
+                    },
+                    {
+                        "x": 308,
+                        "y": 159
+                    }
+                ]
+            }
+        ],
+        "relations": [
+            {
+                "obj1": 3,
+                "obj2": 2
+            },
+            {
+                "obj1": 2,
+                "obj2": 5
+            },
+            {
+                "obj1": 5,
+                "obj2": 1
+            },
+            {
+                "obj1": 1,
+                "obj2": 4
+            }
+        ]
+    }
+}
