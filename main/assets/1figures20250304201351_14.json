@@ -1,0 +1,43 @@
+{
+    "scene": {
+        "size": {
+            "width": 318,
+            "height": 447
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "polygon",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": [
+                    {
+                        "x": 159,
+                        "y": 244
+                    },
+                    {
+                        "x": 112,
+                        "y": 2
+                    },
+                    {
+                        "x": 285,
+                        "y": 394
+                    },
+                    {
+                        "x": 198,
+                        "y": 71
+                    }
+                ]
+            }
+        ],
+        "relations": []
+    }
+}

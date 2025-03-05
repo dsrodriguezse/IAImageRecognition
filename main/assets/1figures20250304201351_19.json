@@ -1,0 +1,32 @@
+{
+    "scene": {
+        "size": {
+            "width": 127,
+            "height": 334
+        },
+        "background": {
+            "red": 255,
+            "green": 255,
+            "blue": 255
+        },
+        "objects": [
+            {
+                "id": 1,
+                "type": "circle",
+                "color": {
+                    "red": 0,
+                    "green": 0,
+                    "blue": 0
+                },
+                "points": {
+                    "center": {
+                        "x": 40,
+                        "y": 87
+                    },
+                    "radius": 63
+                }
+            }
+        ],
+        "relations": []
+    }
+}
